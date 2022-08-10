@@ -67,3 +67,51 @@ def write_enhanced_lyric(data, output_path):
 		out_str += '\n'
 		output_file.write(out_str)
 
+class Elrc:
+	def __init__(self, file_path):
+		phrases = []
+		with open(file_path, 'r') as f:
+			for n,line in enumerate(f):
+				if line[:2] != '[0': continue
+
+				phrase = line.strip().split('<')
+				phrase_start = self.tag2time(phrase[0][1:-1])
+
+				words = []
+				total_duration = 0
+
+				for i,word in enumerate(phrase[1:]):
+					word_start, lpd_end = word.split('>')
+					lpd, word_end = word.split('{')
+					word_end = word_end.split('}')[0]
+					word_end = self.tag2time(word_end)
+
+					lyric, pitch, duration = lpd.split(' ')
+
+					word_start = self.tag2time(word_start)
+					pitch = int(pitch)
+					duration = float(duration)
+
+					words.append(word_info(start=word_start, end=word_end, beat=duration, pitch=[pitch]))
+
+				for word in words:
+					word.show()
+
+
+				phrases.append(words)
+
+		self.phrases = phrases
+
+	def data(self):
+		return self.phrases
+
+	def tag2time(self, tag_str):
+		if len(tag_str)!= 8:
+			print("invalid tag length: " + tag_str)
+			os._exit(0)
+		mm = float(tag_str[0:2])
+		ss = float(tag_str[3:5])
+		xx = float(tag_str[6:8])
+
+		return mm*60 + ss + xx/100
+
