@@ -16,10 +16,22 @@ The enhanced LRC files are in the "enhanced_lrc" folder. Each line in an enhance
 
 ### MIDI
 
-The annotation MIDIs are also proviced in the "midi" folder.
+The annotation MIDIs are also provided in the "midi" folder.
 
 ## Label Initialization
 
+The midi labels are initialized by music notation and LRC files. The corrected musical notation and LRC files are in folder "notation" and "lrc".
+
+"initialize_label.py" can be used to create coarse labels.
+
 ## Manual Label Calibration
 
+All the labels are calibrated via a manually process. Annotators correct the time tags in the LRC files to calibrate the whole song.
+
+Meanwhile, we provide a method that directly converting the enhanced LRC files to MIDI files. "elrc2midi.py" can be used to execute this process.
+
 ## Raw Audio
+
+The youtube links of all the raw audio are recorded in "youtubeLinks.txt".
+
+"download.py" can be used to get the raw audio.
