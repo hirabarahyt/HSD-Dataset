@@ -4,6 +4,8 @@ This repository provides a singing annotation dataset that records vocal informa
 
 ## Annotations
 
+Two kind of annotations are offered: enhanced LRC and MIDI. The enhanced LRC annotations are recommended because the singing information is recorded in a hierarchical structure.
+
 ### enhanced LRC
 
 ### MIDI
