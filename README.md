@@ -8,9 +8,15 @@ Two kind of annotations are offered: enhanced LRC and MIDI. The enhanced LRC ann
 
 ### enhanced LRC
 
-The enhanced LRC files are in the 
+The enhanced LRC files are in the "enhanced_lrc" folder. Each line in an enhanced LRC file records the vocal information of a music phrase. Each line is in the format:  
+  
+[phrase time tag]\<onset time tag>lyric pitch duration{offset time tag}\<onset time tag>lyric pitch duration{offset time tag}...\<onset time tag>lyric pitch duration{offset time tag}  
+  
+"read_enhanced_lyric.py" can be used to read the annotations.
 
 ### MIDI
+
+The annotation MIDIs are also proviced in the "midi" folder.
 
 ## Label Initialization
 
