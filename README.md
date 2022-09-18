@@ -8,6 +8,8 @@ Two kind of annotations are offered: enhanced LRC and MIDI. The enhanced LRC ann
 
 ### enhanced LRC
 
+The enhanced LRC files are in the 
+
 ### MIDI
 
 ## Label Initialization
